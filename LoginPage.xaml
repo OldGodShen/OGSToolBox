@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OGSToolBox.LoginPage"
+             Title="LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackLayout VerticalOptions="End">
+                <Image Source="dotnet_bot.svg" WidthRequest="100"/>
+                <Label Text="选择导师" HorizontalOptions="Center" FontSize="50"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Margin="20,10" VerticalOptions="Center">
+                <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
+                    <Entry Text="" Placeholder="请输入学生名字" Margin="15,0"/>
+                </Frame>
+                <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
+                    <Entry Text="" Placeholder="请输入班级" Margin="15,0"/>
+                </Frame>
+                <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
+                    <Entry Text="" Placeholder="请输入学号" Margin="15,0"/>
+                </Frame>
+                <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
+                    <Entry Text="" Placeholder="请输入导师" Margin="15,0"/>
+                </Frame>
+            </StackLayout>
+            
+            <Button Margin="20,0" Text="登录" VerticalOptions="Start" Grid.Row="2" CornerRadius="25"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
