@@ -32,7 +32,7 @@
                 </Frame>
             </StackLayout>
             
-            <Button Margin="20,0" Text="登录" VerticalOptions="Start" Grid.Row="2" CornerRadius="25" Command="{Binding Submit}"/>
+            <Button Margin="20,0" Text="提交" VerticalOptions="Start" Grid.Row="2" CornerRadius="25" Command="{Binding Submit}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
