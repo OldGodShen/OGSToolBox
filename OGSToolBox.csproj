@@ -49,9 +49,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="LoginPage.xaml">
+	  <Compile Update="Views\Jinshuju.xaml.cs">
+	    <DependentUpon>Jinshuju.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Jinshuju.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionOGSToolBoxHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

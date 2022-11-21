@@ -1,4 +1,4 @@
-﻿namespace OGSToolBox;
+﻿namespace OGSToolBox.Views;
 
 public partial class MainPage : ContentPage
 {
