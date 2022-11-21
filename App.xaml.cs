@@ -1,4 +1,6 @@
-﻿namespace OGSToolBox;
+﻿using OGSToolBox.Views;
+
+namespace OGSToolBox;
 
 public partial class App : Application
 {

@@ -12,7 +12,7 @@
             </Grid.RowDefinitions>
             <StackLayout VerticalOptions="End">
                 <Image Source="dotnet_bot.svg" WidthRequest="100"/>
-                <Label Text="金数据" HorizontalOptions="Center" FontSize="50"/>
+                <Label Text="金数据提交" HorizontalOptions="Center" FontSize="50"/>
             </StackLayout>
             <StackLayout Grid.Row="1" Margin="20,10" VerticalOptions="Center">
                 <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
@@ -32,7 +32,7 @@
                 </Frame>
             </StackLayout>
             
-            <Button Margin="20,0" Text="登录" VerticalOptions="Start" Grid.Row="2" CornerRadius="25"/>
+            <Button Margin="20,0" Text="登录" VerticalOptions="Start" Grid.Row="2" CornerRadius="25" Command="{Binding Submit}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
