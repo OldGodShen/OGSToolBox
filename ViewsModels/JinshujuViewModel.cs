@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui.Alerts;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,67 @@ namespace OGSToolBox.ViewsModels
 {
     public class JinshujuViewModel
     {
+        public class CreatePublishedFormEntry
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public string errors { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string redirectUrl { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string wxOnetimeMessageRedirectUrl { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string cookies { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string redirectToMiniprogramSuccess { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string submitterExists { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string identityFieldLabel { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string __typename { get; set; }
+        }
+        public class Errors
+        {
+            /// <summary>
+            /// 表单不存在
+            /// </summary>
+            public string message { get; set; }
+        }
+        public class Data
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public CreatePublishedFormEntry createPublishedFormEntry { get; set; }
+        }
+
+        public class Root
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public Data data { get; set; }
+            public Errors errors { get; set; }
+        }
+
+
+
         public string Id { get; set; }
         public string StudentName { get; set; }
         public string ClassId { get; set; }
@@ -50,8 +112,11 @@ namespace OGSToolBox.ViewsModels
             };
             using var response = await client.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(body);
-            await Toast.Make(body, CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
+            body = body.Replace("[", string.Empty);
+            body = body.Replace("]", string.Empty);
+            Root rt = JsonConvert.DeserializeObject<Root>(body);
+
+            await Toast.Make("1", CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
         }
     }
 }
