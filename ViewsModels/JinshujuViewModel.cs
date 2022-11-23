@@ -48,12 +48,10 @@ namespace OGSToolBox.ViewsModels
         }
                 }
             };
-            using (var response = await client.SendAsync(request))
-            {
-                var body = await response.Content.ReadAsStringAsync();  
-                Console.WriteLine(body);
-                await Toast.Make(body, CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
-            }
+            using var response = await client.SendAsync(request);
+            var body = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(body);
+            await Toast.Make(body, CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
         }
     }
 }
