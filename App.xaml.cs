@@ -8,7 +8,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		//MainPage = new AppShell();
-		MainPage = new Jinshuju();
+		MainPage = new AppShell();
 	}
 }

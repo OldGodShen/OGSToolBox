@@ -1,4 +1,6 @@
-﻿namespace OGSToolBox;
+﻿using CommunityToolkit.Maui;
+
+namespace OGSToolBox;
 
 public static class MauiProgram
 {
@@ -11,8 +13,9 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+			})
+			.UseMauiCommunityToolkit();
 
-		return builder.Build();
+        return builder.Build();
 	}
 }

@@ -7,9 +7,18 @@
     xmlns:v="clr-namespace:OGSToolBox.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <FlyoutItem>
+        
     <ShellContent
         Title="金数据"
         ContentTemplate="{DataTemplate v:Jinshuju}"
         Route="Jinshuju" />
+    
+    <ShellContent
+        Title="选课"
+        ContentTemplate="{DataTemplate v:MainPage}"
+        Route="MainPage" />
+
+    </FlyoutItem>
 
 </Shell>
