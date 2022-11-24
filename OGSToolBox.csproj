@@ -47,6 +47,7 @@
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <Optimize>True</Optimize>
 	  <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+	  <EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
@@ -58,6 +59,7 @@
 	  <AndroidLinkTool>r8</AndroidLinkTool>
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <DebugSymbols>False</DebugSymbols>
+	  <EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
