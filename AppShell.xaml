@@ -16,8 +16,8 @@
     
     <ShellContent
         Title="选课"
-        ContentTemplate="{DataTemplate v:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate v:Ruoyi}"
+        Route="Ruoyi" />
 
     </FlyoutItem>
 

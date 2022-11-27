@@ -43,20 +43,18 @@
 	  <ApplicationId>com.oldgodshen.ogstoolbox</ApplicationId>
 	  <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
 	  <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
-	  <AndroidLinkTool>r8</AndroidLinkTool>
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <Optimize>True</Optimize>
-	  <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
 	  <EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
 	  <ApplicationId>com.oldgodshen.ogstoolbox</ApplicationId>
 	  <ApplicationDisplayVersion>1.0.1</ApplicationDisplayVersion>
-	  <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
-	  <AndroidLinkTool>r8</AndroidLinkTool>
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <DebugSymbols>False</DebugSymbols>
 	  <EnableLLVM>True</EnableLLVM>
