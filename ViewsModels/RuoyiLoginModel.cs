@@ -19,7 +19,25 @@ namespace OGSToolBox.ViewsModels
         {
             RuoyiLogin = new Command(DoRuoyiLogin);
         }
-
+        public class Data
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public int code { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string data { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public double time { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string unique_code { get; set; }
+        }
         public class Root
         {
             /// <summary>
@@ -42,6 +60,8 @@ namespace OGSToolBox.ViewsModels
             /// 
             /// </summary>
             public string uuid { get; set; }
+            public string token { get; set; }
+            public Data data { get; set; }
         }
 
         private async void DoRuoyiLogin()
@@ -71,7 +91,24 @@ namespace OGSToolBox.ViewsModels
             };
             using var codebk = await client.SendAsync(request);
             body = await codebk.Content.ReadAsStringAsync();
-            Console.WriteLine(body);
+            rt = JsonConvert.DeserializeObject<Root>(body);
+            string code = rt.data.data;
+            request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new Uri("http://106.15.5.115:8788/prod-api/login"),
+                Content = new StringContent("{\"username\":\"" + this.Username + "\",\"password\":\"" + this.Passwd + "\",\"code\":\"" + code + "\",\"uuid\":\"" + uuid + "\"}")
+                {
+                    Headers =
+                    {
+                        ContentType = new MediaTypeHeaderValue("application/json")
+                    }
+                }
+            };
+            using var tokenbk = await client.SendAsync(request);
+            body = await tokenbk.Content.ReadAsStringAsync();
+            rt = JsonConvert.DeserializeObject<Root>(body);
+            string token = rt.token;
         }
     }
 }

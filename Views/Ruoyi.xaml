@@ -3,8 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OGSToolBox.Views.Ruoyi">
     <StackLayout>
-        <Label Text="Home" FontSize="30"></Label>
-        <Button Text="2" Command="{Binding RuoyiLogin}"/>
+        <Label Text="上师嘉高选课系统登录" FontSize="30"></Label>
+        <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
+            <Entry Text="{Binding Username}" Placeholder="请输入账号" Margin="15,0"/>
+        </Frame>
+        <Frame Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
+            <Entry Text="{Binding Passwd}" Placeholder="请输入密码" IsPassword="True" Margin="15,0"/>
+        </Frame>
+        <Button Text="登录" Command="{Binding RuoyiLogin}"/>
     </StackLayout>
 
 </ContentPage>
