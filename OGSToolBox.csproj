@@ -130,10 +130,16 @@
 	  <Compile Update="Views\Jinshuju.xaml.cs">
 	    <DependentUpon>Jinshuju.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\SSJGLessonsView.xaml.cs">
+	    <DependentUpon>SSJGLessonsView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\Jinshuju.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SSJGLessonsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

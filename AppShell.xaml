@@ -18,6 +18,11 @@
         Title="选课"
         ContentTemplate="{DataTemplate v:Ruoyi}"
         Route="Ruoyi" />
+    
+    <ShellContent
+        Title="选课列表"
+        ContentTemplate="{DataTemplate v:SSJGLessonsView}"
+        Route="SSJGLessonsView" />
 
     </FlyoutItem>
 
