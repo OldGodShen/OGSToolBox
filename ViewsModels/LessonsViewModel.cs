@@ -4,15 +4,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.Security.Authentication.Web.Provider;
 
 namespace OGSToolBox.ViewsModels
 {
     internal class LessonsViewModel
     {
-        //[QueryProperty("TokenGet", "token")]
-        public string Token { get; set; }
-	    private async void GetLessonsList()
+
+
+        internal static async void GetLessonsList(string token)
 	    {
             var client = new HttpClient();
             var request = new HttpRequestMessage

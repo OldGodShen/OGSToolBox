@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui.Alerts;
-using Java.Security;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OGSToolBox.ViewsModels
 {
-    internal class RuoyiLoginModel
+    public class RuoyiLoginModel
     {
         public string Username { get; set; } = String.Empty;
         public string Passwd { get; set; } = String.Empty;
@@ -67,7 +66,6 @@ namespace OGSToolBox.ViewsModels
         {
             var client = new HttpClient();
             int LoginStatus = 1;
-            string token = "Unknown";
             while (LoginStatus < 4)
             {
                 var request = new HttpRequestMessage
@@ -124,8 +122,7 @@ namespace OGSToolBox.ViewsModels
                 }
                 else if (msg == "操作成功")
                 {
-                    token = rt.token;
-                    await Shell.Current.GoToAsync("//SSJGLessonsView?token=" + token);
+                    await Shell.Current.GoToAsync("//SSJGLessons?token=" + rt.token);
                     break;
                 }
                 else
