@@ -4,5 +4,9 @@
              x:Class="OGSToolBox.Views.SSJGLessonsView"
              Title="上师嘉高选科列表">
     <VerticalStackLayout>
+        <Label Text="{Binding token}" FontSize="10"></Label>
+        <Button Text="获取" Command="{Binding GetList}" FontSize="10"></Button>
+        <Label Text="{Binding List}" FontSize="10"></Label>
+        
     </VerticalStackLayout>
 </ContentPage>

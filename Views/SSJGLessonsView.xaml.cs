@@ -11,6 +11,7 @@ public partial class SSJGLessonsView : ContentPage
 	public SSJGLessonsView()
 	{
 		InitializeComponent();
+		this.BindingContext= new LessonsViewModel();
     }
 
 }
