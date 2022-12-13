@@ -123,7 +123,7 @@ namespace OGSToolBox.ViewsModels
 
         private async void GetLessonsList()
         {
-            string Classname = string.Empty;
+            string Result = null;
             try
             {
                 var client = new HttpClient();
@@ -140,15 +140,38 @@ namespace OGSToolBox.ViewsModels
                 string body = await response.Content.ReadAsStringAsync();
                 body = body.Replace("null", "0");
                 Root rt = JsonConvert.DeserializeObject<Root>(body);
+                // 生成HTML
+                string tHtml = "<table>\n";
+                tHtml += "<tr>\n";
+                string[] tbHead = { "学分", "课程", "教师", "最大人数", "当前人数", "选课开始时间", "选课结束时间" };
+                foreach (string t in tbHead)
+                {
+                    tHtml += String.Format("<th>%s</th>\n", t);
+                }
+                tHtml += "</tr>\n";
                 foreach (var item in rt.rows)
                 {
-                    Classname = Classname + "\n" + item.courseClassName;
+                    tHtml += "<tr>\n";
+                    tHtml += String.Format("<td>%s</td>\n", item.remark);
+                    tHtml += String.Format("<td>%s</td>\n", item.courseClassId);
+                    tHtml += String.Format("<td>%s</td>\n", item.userId);
+                    tHtml += String.Format("<td>%s</td>\n", item.courseClassNum);
+                    tHtml += String.Format("<td>%s</td>\n", item.courseClassSize);
+                    tHtml += String.Format("<td>%s</td>\n", item.classSize);
+                    tHtml += String.Format("<td>%s</td>\n", item.startTime);
+                    tHtml += String.Format("<td>%s</td>\n", item.endTime);
+                    tHtml += "</tr>\n";
                 }
+                tHtml += "</table>";
+                tHtml = String.Format("<!DOCTYPE html><html><head></head><body>\n%s\n</body></html>", tHtml);
+                Result = tHtml;
+                Debug.Print(Result);
+                Debug.Print("Process the Result yourself!!");
             }catch(Exception ex)
             {
-                Classname = ex.ToString();
+                Result = String.Format("<!DOCTYPE html><html><head></head><body>\n%s\n%s\n</body></html>", "发生错误：", ex.ToString());
             }
-            _list = Classname;
+            _list = Result;
         }
         private string _list;
         public string List
