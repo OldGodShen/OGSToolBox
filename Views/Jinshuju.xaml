@@ -12,7 +12,7 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
-                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="30"/>
                             <RowDefinition Height="45"/>
                             <RowDefinition Height="10"/>
                             <RowDefinition Height="45"/>
@@ -25,15 +25,7 @@
                             <RowDefinition Height="10"/>
                             <RowDefinition Height="45"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Image Grid.Row="1" Source="dotnet_bot.svg" WidthRequest="100"  HeightRequest="100"/>
-                            <Label Grid.Row="2" Text="金数据提交" HorizontalOptions="Center" FontSize="50" Margin="0,20"/>
-                        </Grid>
+                        <Label Grid.Row="0" Text="金数据提交" HorizontalOptions="Center" FontSize="50" Margin="0,20"/>
                         <Frame Grid.Row="2" Padding="0" BorderColor="Transparent" CornerRadius="30" Background="#11000055">
                             <Entry Text="{Binding Id}" Placeholder="请输入表单编号" Margin="15,0"/>
                         </Frame>
